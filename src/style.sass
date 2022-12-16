@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap')
+    
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+$light-cyan: hsl(193, 38%, 86%)
+$neon-green: hsl(150, 100%, 66%)
+$grayis-blue: hsl(217, 19%, 38%)
+$dark-grayish-blue: hsl(217, 19%, 24%)
+$dark-blue: hsl(218, 23%, 16%)
+$font-size: 14px
+
+$font-family: 'Manrope', sans-serif  //800
+
+html
+    font-size: $font-size
+
+body
+    font-family: $font-family
+    background: $dark-blue
+
+main
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100vh
+
+.card
+    position: relative
+    background: $dark-grayish-blue
+    border-radius: 1rem
+    padding: 2rem
+    max-width: 500px
+    &__num
+        margin-top: 2rem
+        display: block
+        color: $neon-green
+        font-size: 1rem
+        text-transform: uppercase
+        text-align: center
+        letter-spacing: 1px
+    &__title
+        color: $light-cyan
+        font-size: 1.8rem
+        text-align: center
+        margin-top: 1rem
+    &__image
+        margin: 2rem auto
+        display: block
+        width: 100%
+    &__button
+        position: absolute
+        bottom: -25px
+        left: 50%   
+        transform: translateX(-50%)
+        background: $neon-green
+        border-radius: 50%
+        width: 50px
+        height: 50px
+        border: none
+        &:hover
+            box-shadow: 0px 0px 20px 2px $neon-green
+            cursor: pointer
+        & > img
+            display: block
+            margin: auto
+            width: 40%
+
+
+@media screen and (max-width: 480px)
+    .card
+        max-width: 95%
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css")
+
+.flag
+    display: flex
+    justify-content: center
+    align-items: center
+    color: #fff
+    width: 300px
+    height: 0px
+    background: #2e2e2e
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    border-bottom-right-radius: 30px
+    border-bottom-left-radius: 30px
+    transition: 1s
+    opacity: 0
+    pointer-events: none
+    overflow: hidden
+    &__button
+        width: 40px
+        height: 25px
+        background: #2e2e2e
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        border-bottom-right-radius: 30px
+        border-bottom-left-radius: 30px
+        display: flex
+        justify-content: center
+        align-items: center
+        color: #fff
+        cursor: pointer
+        &> span
+            align-self: center
+            font-size: 20px
+    &__attribution
+        color: #fff
+        text-decoration: none
+        font-size: 16px
+        &> a
+            color: #00db6e
+            &:visited
+                color: #03f1f1
+    &__check
+        display: none
+        &:checked
+            & ~ .flag
+                pointer-events: auto
+                height: 70px
+                opacity: 1
+                transition: height 1s
